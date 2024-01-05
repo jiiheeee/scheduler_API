@@ -24,7 +24,7 @@ class ScheduleAddView(APIView):
             return HttpResponse('초대받은 사람이 존재하지 않습니다.', status=400)
         
         GuestSpace.objects.create(
-            Schedule_id=schedule_id,
+            schedule_number=schedule_obj,
             user_id=invited_user
         )
 
