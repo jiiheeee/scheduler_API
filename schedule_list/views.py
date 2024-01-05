@@ -1,20 +1,32 @@
 from rest_framework.views import APIView
 from django.http import HttpResponse
-from schedule_list.models import Schedule
+from schedule_list.models import Schedule, GuestSpace
+from user.models import User
 
 class ScheduleAddView(APIView):
     
     def post(self, request):
-        host_name = request.data.get("host_name")
-        guest_name = request.data.get("guest_name")
+        invite_name = request.data.get("host_name")
+        invited_name = request.data.get("guest_name")
         date = request.data.get("date")
         memo = request.data.get("memo")
         
-        Schedule.objects.create(
-            host_name=host_name,
-            guest_name=guest_name,
+        schedule_obj = Schedule.objects.create(
+            host_name=invite_name,
+            guest_name=invited_name,
             date=date,
             memo=memo
-            
         )
+        schedule_id = schedule_obj.pk
+        try:
+            invited_user = User.objects.get(username=invited_name)
+        except User.DoesNotExist:
+            return HttpResponse('초대받은 사람이 존재하지 않습니다.', status=400)
+        
+        GuestSpace.objects.create(
+            Schedule_id=schedule_id,
+            user_id=invited_user
+        )
+
         return HttpResponse('일정이 등록되었습니다.')
+    
