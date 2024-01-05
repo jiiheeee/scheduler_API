@@ -17,15 +17,15 @@ class ScheduleAddView(APIView):
             date=date,
             memo=memo
         )
-        schedule_id = schedule_obj.pk
+
         try:
             invited_user = User.objects.get(username=invited_name)
         except User.DoesNotExist:
             return HttpResponse('초대받은 사람이 존재하지 않습니다.', status=400)
         
         GuestSpace.objects.create(
-            schedule_number=schedule_obj,
-            user_id=invited_user
+            schedule=schedule_obj,
+            user=invited_user
         )
 
         return HttpResponse('일정이 등록되었습니다.')
