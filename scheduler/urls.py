@@ -16,8 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.http import HttpResponse
+import pyjokes
+
+def hello_world(request):
+    return HttpResponse(pyjokes.get_joke())
 
 urlpatterns = [
+    path("xx/", hello_world, name='hello_world'),
     path('admin/', admin.site.urls),
     path('accounts/', include("accounts.urls")),
     path('user/', include("user.urls")),
