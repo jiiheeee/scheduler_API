@@ -4,7 +4,7 @@ from rest_framework import serializers
 from .models import User
 
 class UserSerializer(serializers.ModelSerializer):
-    user_name = serializers.CharField(required=True)
+    username = serializers.CharField(required=True)
     password = serializers.CharField(required=True)
     mail = serializers.CharField(required=True)
     is_active = serializers.CharField(required=True)
@@ -14,7 +14,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = (
-            'user_name',
+            'username',
             'password',
             'mail',
             'is_active',
