@@ -1,8 +1,8 @@
 from django.db import models
 
 class Schedule(models.Model):
-    host_name = models.CharField(max_length=200)
-    guest_name = models.CharField(max_length=200)
+    host_id = models.IntegerField()
+    guest_id = models.IntegerField()
     date = models.DateTimeField()
     memo = models.CharField(max_length=200)
     is_active = models.BooleanField(default=True, null=False)
