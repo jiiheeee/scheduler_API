@@ -1,0 +1,70 @@
+# .gitignore for Django Projects
+
+# Ignore virtual environment
+venv/
+
+# Ignore local development settings
+*.env
+
+# Ignore database files
+*.sqlite3
+*.db
+
+# Ignore static files
+staticfiles/
+
+# Ignore media files
+media/
+
+# Ignore secret key
+*.secret_key
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore logs
+*.log
+
+# Ignore coverage reports
+htmlcov/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Python bytecode
+*.pyc
+
+# Ignore development-specific files
+*.iml
+*.idea/
+
+# Ignore Docker files
+Dockerfile
+docker-compose.yml
+
+# Ignore environment-specific files
+.env
+
+# Ignore pipenv files
+Pipfile
+Pipfile.lock
+
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore PyCharm settings
+.idea/
+*.pycharm/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore pytest cache
+__pycache__/
+.cach/
+
+# Ignore local database
+db.sqlite3

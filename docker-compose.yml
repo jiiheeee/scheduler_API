@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:latest  # 또는 다른 데이터베이스 이미지를 사용
+    container_name: myapp_db
+    environment:
+      POSTGRES_DB: myapp
+      POSTGRES_USER: myappuser
+      POSTGRES_PASSWORD: myapppassword
+
+  web:
+    build: .
+    container_name: myapp_web
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DJANGO_DEBUG=True
+      - DJANGO_DB_ENGINE=django.db.backends.sqlite3
+      - DJANGO_DB_NAME=/app/db.sqlite3
+      # Add other Django settings as needed
+
