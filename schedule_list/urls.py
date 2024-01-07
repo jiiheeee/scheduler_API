@@ -7,5 +7,5 @@ urlpatterns = [
     path("guest/delete/<int:schedule_id>/<int:user_id>", GuestDeleteView.as_view()),
     path("guest/add/", GuestAddView.as_view()),
     path("detail/", ScheduleDetailView.as_view()),
-    path("like/", ScheduleLikeView.as_view())
+    path("like/", ScheduleLikeView.as_view()),
 ]
