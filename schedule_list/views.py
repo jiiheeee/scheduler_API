@@ -27,7 +27,12 @@ class ScheduleAddView(APIView):
             user=invited_user
         )
         return HttpResponse('일정이 등록되었습니다.')
-    
+
+class ScheduledeleteView(APIView):
+    def get(self, request, schedule_id: int):
+        delete_schedule = Schedule.objects.get(id=schedule_id)
+        delete_guest = GuestSpace.objects.get(schedule_id=schedule_id)
+        
 class GuestDeleteView(APIView):
     def get(self, request, schedule_id: int, user_id: int):
         try:
