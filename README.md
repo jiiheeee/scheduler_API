@@ -40,6 +40,8 @@ POST /signup
 
 POST /signin
 
+<br/>
+
 POST /schedule 
 
 GET /schedule 
@@ -47,6 +49,8 @@ GET /schedule
 DELETE /schedule 
 
 PATCH /schedule
+
+<br/>
 
 POST /schedule/user 
 
