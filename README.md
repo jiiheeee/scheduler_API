@@ -13,6 +13,13 @@
 <br/>
 <br/>
 
+## Database Diagrams
+<img width="741" alt="스크린샷 2024-01-21 오후 3 28 55" src="https://github.com/jiiheeee/first_project/assets/128598772/97066ca3-5383-484e-b513-9bb1af7bb417">
+
+<br/>
+<br/>
+<br/>
+
 ## 개발 환경
 • 프로젝트는 다음 환경에서 개발 및 배포되었습니다
 
